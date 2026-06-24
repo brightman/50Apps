@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>OpenInMap</title>
-  <meta name="description" content="OpenInMap opens addresses, coordinates, and shared map links in the map app you choose.">
+  <meta name="description" content="OpenInMap shows compass, GNSS coordinates, altitude, and opens locations in your preferred map app.">
   <style>
     :root {
       color-scheme: light dark;
@@ -131,6 +131,35 @@
       min-height: 150px;
     }
 
+    .screenshots {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      align-items: start;
+      margin: 28px 0 36px;
+    }
+
+    .screenshot {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 10px;
+      box-shadow: 0 20px 44px rgba(0, 0, 0, 0.10);
+    }
+
+    .screenshot img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 22px;
+    }
+
+    .caption {
+      margin: 12px 6px 4px;
+      font-size: 14px;
+      text-align: center;
+    }
+
     ul {
       padding-left: 22px;
       margin: 0;
@@ -163,6 +192,10 @@
         grid-template-columns: 1fr;
       }
 
+      .screenshots {
+        grid-template-columns: 1fr;
+      }
+
       .card {
         padding: 22px;
       }
@@ -173,6 +206,7 @@
   <main>
     <nav aria-label="Page navigation">
       <a href="#features">Features</a>
+      <a href="#screenshots">Screenshots</a>
       <a href="#support">Support</a>
       <a href="#privacy">Privacy</a>
     </nav>
@@ -180,33 +214,51 @@
     <header>
       <div class="app-mark" aria-hidden="true">⌖</div>
       <h1>OpenInMap</h1>
-      <p class="lead">Open addresses, coordinates, and shared map links in the map app you choose. OpenInMap is built for quick switching between Apple Maps, Google Maps, Waze, Baidu Maps, Amap, and Tencent Maps.</p>
+      <p class="lead">A location utility for compass heading, GNSS coordinates, altitude, and opening the current place or typed coordinates in Apple Maps, Google Maps, Waze, Baidu Maps, Amap, or Tencent Maps.</p>
     </header>
 
     <section id="features" class="grid" aria-label="OpenInMap features">
       <article class="card feature">
-        <h2>Share Anywhere</h2>
-        <p>Send text, map links, POIs, or coordinates to OpenInMap from Safari and other iOS apps.</p>
+        <h2>Compass Dashboard</h2>
+        <p>See heading, GNSS latitude and longitude, altitude, and high-accuracy status in a clean light or dark dashboard.</p>
       </article>
       <article class="card feature">
-        <h2>Choose Your Map</h2>
-        <p>Open the same place in the map app that fits your region, route, or preference.</p>
+        <h2>Open In Any Map</h2>
+        <p>Tap a map icon to open the current coordinate, typed coordinate, address, or POI in the map app you choose.</p>
       </article>
       <article class="card feature">
-        <h2>Local First</h2>
-        <p>OpenInMap works on your device. It does not require an account, server, or analytics SDK.</p>
+        <h2>China Coordinates</h2>
+        <p>Supports WGS84, GCJ02, and BD09 conversion so Baidu Maps, Amap, and Tencent Maps receive the right coordinate system.</p>
       </article>
+    </section>
+
+    <section id="screenshots" aria-label="OpenInMap screenshots">
+      <div class="screenshots">
+        <figure class="screenshot">
+          <img src="assets/home-light.png" alt="OpenInMap light mode home screen with compass, GNSS coordinates, and altitude.">
+          <figcaption class="caption">Light dashboard</figcaption>
+        </figure>
+        <figure class="screenshot">
+          <img src="assets/home-dark.png" alt="OpenInMap dark mode home screen with compass and GNSS coordinate card.">
+          <figcaption class="caption">Dark dashboard</figcaption>
+        </figure>
+        <figure class="screenshot">
+          <img src="assets/privacy.png" alt="OpenInMap privacy screen explaining local processing.">
+          <figcaption class="caption">Privacy information</figcaption>
+        </figure>
+      </div>
     </section>
 
     <section id="support" class="card">
       <h2>Support</h2>
       <p>If you need help with OpenInMap, please contact us by email.</p>
-      <p><a href="mailto:brightman.dev@gmail.com">brightman.dev@gmail.com</a></p>
+      <p><a href="mailto:mr.brightman@gmail.com">mr.brightman@gmail.com</a></p>
       <h3>Common Setup</h3>
       <ul>
         <li>Install OpenInMap on your iPhone.</li>
-        <li>Enable the Safari extension in iOS Settings if you want to use OpenInMap from Safari.</li>
-        <li>Use the iOS share sheet to send addresses, coordinates, or map links to OpenInMap from other apps.</li>
+        <li>Allow location access if you want to show current coordinates, altitude, and heading.</li>
+        <li>Type coordinates, an address, or a POI, then tap a map app icon to open it there.</li>
+        <li>Use supported China map apps with automatic coordinate conversion.</li>
       </ul>
     </section>
 
@@ -226,7 +278,7 @@
       <h3>Shared Content</h3>
       <p>When you share text, links, addresses, or coordinates to OpenInMap, the app uses that content locally to prepare a map launch URL.</p>
       <h3>Contact</h3>
-      <p>Questions about privacy can be sent to <a href="mailto:brightman.dev@gmail.com">brightman.dev@gmail.com</a>.</p>
+      <p>Questions about privacy can be sent to <a href="mailto:mr.brightman@gmail.com">mr.brightman@gmail.com</a>.</p>
     </section>
 
     <footer>
