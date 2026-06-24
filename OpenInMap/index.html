@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenInMap</title>
+  <meta name="description" content="OpenInMap opens addresses, coordinates, and shared map links in the map app you choose.">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #eef3f9;
+      --fg: #15171c;
+      --muted: #6d7480;
+      --card: rgba(255, 255, 255, 0.82);
+      --line: rgba(20, 24, 32, 0.10);
+      --accent: #2d7ff9;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #050914;
+        --fg: #f5f7fb;
+        --muted: #9aa3b2;
+        --card: rgba(25, 31, 47, 0.88);
+        --line: rgba(255, 255, 255, 0.10);
+        --accent: #59a2ff;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    main {
+      width: min(880px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 56px 0;
+    }
+
+    header {
+      padding: 48px 0 32px;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-bottom: 42px;
+      font-size: 14px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .app-mark {
+      width: 62px;
+      height: 62px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: #14223a;
+      color: #ff3f45;
+      font-size: 34px;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 8vw, 76px);
+      line-height: 1;
+      margin: 0 0 16px;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      font-size: 28px;
+      line-height: 1.2;
+      margin: 0 0 14px;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin: 24px 0 8px;
+    }
+
+    p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .lead {
+      max-width: 680px;
+      font-size: 21px;
+      color: var(--muted);
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 28px;
+      margin: 20px 0;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 30px;
+    }
+
+    .feature {
+      min-height: 150px;
+    }
+
+    ul {
+      padding-left: 22px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 38px;
+      padding-top: 24px;
+    }
+
+    @media (max-width: 760px) {
+      main {
+        padding-top: 28px;
+      }
+
+      header {
+        padding-top: 24px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <nav aria-label="Page navigation">
+      <a href="#features">Features</a>
+      <a href="#support">Support</a>
+      <a href="#privacy">Privacy</a>
+    </nav>
+
+    <header>
+      <div class="app-mark" aria-hidden="true">⌖</div>
+      <h1>OpenInMap</h1>
+      <p class="lead">Open addresses, coordinates, and shared map links in the map app you choose. OpenInMap is built for quick switching between Apple Maps, Google Maps, Waze, Baidu Maps, Amap, and Tencent Maps.</p>
+    </header>
+
+    <section id="features" class="grid" aria-label="OpenInMap features">
+      <article class="card feature">
+        <h2>Share Anywhere</h2>
+        <p>Send text, map links, POIs, or coordinates to OpenInMap from Safari and other iOS apps.</p>
+      </article>
+      <article class="card feature">
+        <h2>Choose Your Map</h2>
+        <p>Open the same place in the map app that fits your region, route, or preference.</p>
+      </article>
+      <article class="card feature">
+        <h2>Local First</h2>
+        <p>OpenInMap works on your device. It does not require an account, server, or analytics SDK.</p>
+      </article>
+    </section>
+
+    <section id="support" class="card">
+      <h2>Support</h2>
+      <p>If you need help with OpenInMap, please contact us by email.</p>
+      <p><a href="mailto:brightman.dev@gmail.com">brightman.dev@gmail.com</a></p>
+      <h3>Common Setup</h3>
+      <ul>
+        <li>Install OpenInMap on your iPhone.</li>
+        <li>Enable the Safari extension in iOS Settings if you want to use OpenInMap from Safari.</li>
+        <li>Use the iOS share sheet to send addresses, coordinates, or map links to OpenInMap from other apps.</li>
+      </ul>
+    </section>
+
+    <section id="privacy" class="card">
+      <h2>Privacy Policy</h2>
+      <p>Last updated: June 24, 2026</p>
+      <p>OpenInMap is designed as a local utility. We do not collect, sell, rent, or share personal data.</p>
+      <h3>Data Collection</h3>
+      <ul>
+        <li>OpenInMap does not require an account.</li>
+        <li>OpenInMap does not use a server to process addresses or coordinates.</li>
+        <li>OpenInMap does not include third-party analytics SDKs.</li>
+        <li>OpenInMap does not save address history on our servers.</li>
+      </ul>
+      <h3>Location</h3>
+      <p>If you allow location access, OpenInMap uses your current location on device to show coordinates, heading, altitude, and to open your current position in a selected map app. Location data is not uploaded to us.</p>
+      <h3>Shared Content</h3>
+      <p>When you share text, links, addresses, or coordinates to OpenInMap, the app uses that content locally to prepare a map launch URL.</p>
+      <h3>Contact</h3>
+      <p>Questions about privacy can be sent to <a href="mailto:brightman.dev@gmail.com">brightman.dev@gmail.com</a>.</p>
+    </section>
+
+    <footer>
+      <p>© 2026 Brightman. OpenInMap is an independent utility and is not affiliated with Apple, Google, Waze, Baidu, Amap, or Tencent.</p>
+    </footer>
+  </main>
+</body>
+</html>
